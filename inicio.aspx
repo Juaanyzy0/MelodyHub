@@ -11,7 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <h1>El usuario <%=Session["nombre"] %> ingresó</h1>
+            <h1>El usuario <%=Session["nombre"] %> no ha ingresado</h1>
             <asp:Button ID ="btnSalir" runat="server" Text="Salir" OnClick="BtnSalir_Click1" />
         </div>
     </form>
