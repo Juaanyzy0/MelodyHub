@@ -9,8 +9,7 @@ namespace MelodyHub.instrumentos
 {
     public partial class Instrumentos : System.Web.UI.Page
     {
-        private string ConnectionString= "Data Source=SERVER_NAME;Initial Catalog=melodyhub;Integrated Security=True";
-
+        String cadenaConexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
