@@ -20,7 +20,7 @@ namespace MelodyHub.instrumentos
 
         private void LoadInstrumentos()
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM instrumento", conn);
                 DataTable dt = new DataTable();
@@ -49,7 +49,7 @@ namespace MelodyHub.instrumentos
             string marca = ((TextBox)gvInstrumentos.Rows[e.RowIndex].Cells[2].Controls[0]).Text;
             string modelo = ((TextBox)gvInstrumentos.Rows[e.RowIndex].Cells[3].Controls[0]).Text;
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
             {
                 SqlCommand cmd = new SqlCommand("UPDATE instrumento SET tipo_instrumento=@Tipo, marca=@Marca, modelo=@Modelo WHERE id_instrumento=@Id", conn);
                 cmd.Parameters.AddWithValue("@Id", id);
@@ -69,7 +69,7 @@ namespace MelodyHub.instrumentos
         {
             int id = Convert.ToInt32(gvInstrumentos.DataKeys[e.RowIndex].Value);
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
             {
                 SqlCommand cmd = new SqlCommand("DELETE FROM instrumento WHERE id_instrumento=@Id", conn);
                 cmd.Parameters.AddWithValue("@Id", id);
