@@ -33,7 +33,7 @@ namespace MelodyHub
                     MySqlDataReader lector = comando.ExecuteReader();
                     if (lector.HasRows)
                     {
-                        Session["usuario"] = nombre;
+                        Session["nombre"] = nombre;
                         Response.Redirect("inicio.aspx", false);
                     }
                     else
