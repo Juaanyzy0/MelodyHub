@@ -20,7 +20,7 @@
                 </div>
                 <nav>
 <h2>Menú de Navegación</h2>
-<asp:HyperLink runat="server" ID="hlInst" NavigateUrl="" Text="instrumentos">
+<asp:HyperLink runat="server" ID="hlInst" NavigateUrl="~/instrumentos/Instrumentos.aspx" Text="instrumentos">
                     <ul>
                         <li><a href="Inicio.aspx">Inicio</a></li>
                         <li><a href="Instrumentos.aspx">Gestión de Instrumentos</a></li>
