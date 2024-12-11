@@ -1,35 +1,43 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MelodyHub.Site" %>
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 <head runat="server">
-    <title>MelodyHub - Instrumentos Musicales</title>
-    <link rel="stylesheet" href="resources/css/styles.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-widht, intial-scale=1.0"/>
+<link rel="stylesheet" href="resources/css/styles.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
+<title>
     <asp:ContentPlaceHolder ID="title" runat="server">
+</title>
     </asp:ContentPlaceHolder>
 <body>
     <form id="form1" runat="server">
         <div class="page-container">
-            <header>
                 <div class="logo">
                     <h1>MelodyHub</h1>
                 </div>
                 <nav>
+<h2>Menú de Navegación</h2>
+<asp:HyperLink runat="server" ID="hlInst" NavigateUrl="" Text="instrumentos">
                     <ul>
-                        <li><a href="Default.aspx">Inicio</a></li>
-                        <li><a href="Instrumentos.aspx">Instrumentos</a></li>
+                        <li><a href="Inicio.aspx">Inicio</a></li>
+                        <li><a href="Instrumentos.aspx">Gestión de Instrumentos</a></li>
                     </ul>
                 </nav>
-            </header>
-
+           <div class="content">
+            <header>
+             <h1>Sistema de Gestión de Instrumentos</h1>
+             <div>
+              <h1>El usuario <%Session["nombre"]%> ingresó</h1>
+              <asp:Button ID="btnSalir" runat="server" Text="Salir" OnClick="btnSalir_Click"/>
+             </div>
+            </header>
             <main>
                 <asp:ContentPlaceHolder ID="main" runat="server">
                 </asp:ContentPlaceHolder>
-            </main>
-
+            </main>
             <footer>
                 <p>&copy; 2024 MelodyHub - Todos los derechos reservados</p>
             </footer>
