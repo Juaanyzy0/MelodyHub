@@ -34,7 +34,7 @@ namespace MelodyHub
                     if (lector.HasRows)
                     {
                         Session["nombre"] = nombre;
-                        Response.Redirect("inicio.aspx", false);
+                        Response.Redirect("index.aspx", false);
                     }
                     else
                     {
