@@ -27,11 +27,14 @@ namespace MelodyHub.instrumentos
                     String sql = "SELECT * FROM instrumento";
                     conexion.Open();
                     MySqlCommand comando = new MySqlCommand(sql, conexion);
-                    MySqlDataReader lector = comando.ExecuteReader();
+                    MySqlDataAdapter da = new MySqlDataAdapter(comando);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
                  }
                  catch (Exception ex)
                  {
-                  }
+
+                 }
 
         protected void gvInstrumentos_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
