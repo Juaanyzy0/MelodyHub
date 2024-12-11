@@ -20,15 +20,18 @@ namespace MelodyHub.instrumentos
 
         private void LoadInstrumentos()
         {
-            using (SqlConnection conn = new SqlConnection(cadenaConexion))
+                        using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM instrumento", conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                gvInstrumentos.DataSource = dt;
-                gvInstrumentos.DataBind();
-            }
-        }
+                try
+                {
+                    String sql = "SELECT * FROM instrumento";
+                    conexion.Open();
+                    MySqlCommand comando = new MySqlCommand(sql, conexion);
+                    MySqlDataReader lector = comando.ExecuteReader();
+                 }
+                 catch (Exception ex)
+                 {
+                  }
 
         protected void gvInstrumentos_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
